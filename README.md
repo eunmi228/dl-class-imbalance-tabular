@@ -7,20 +7,15 @@ This repository contains the code, datasets, and documentation for the thesis ti
 - `src/`: Contains the source code for the experiments.
   
    ### Files and Descriptions
-   
-   1. **dl_eval.py**:
+  1. **dl_eval.py**:
       This script is used for evaluating deep learning models on various datasets with different class imbalance handling methods. It includes the implementation of model evaluation metrics and procedures.
-   
-   2. **dl_train.py**:
+  2. **dl_train.py**:
       This script is responsible for training deep learning models such as ResNet and FT-Transformer on tabular datasets. It handles the setup of data loaders, model preparation, and training loop, including early stopping and logging.
-   
-   3. **util.py**:
+  3. **util.py**:
       This utility script contains helper functions for data loading and preprocessing, which are used across the training and evaluation scripts. It includes functions for loading datasets, transforming features, and splitting data into training and test sets.
-   
-   4. **xgb_train_eval_cv.py**:
+  4. **xgb_train_eval_cv.py**:
       This script is designed for training and evaluating XGBoost models using cross-validation. It fetches the best hyperparameter settings achieved from `xgb_train_eval.py` and evaluates the model's performance under various class imbalance scenarios using these hyperparameters.
-
-5. **xgb_train_eval.py**:
+  5. **xgb_train_eval.py**:
    This script focuses on training and evaluating XGBoost models. It performs hyperparameter tuning using Bayesian optimization to find the best settings, which are then used by `xgb_train_eval_cv.py` for cross-validation.
 
 - `docs/`: Contains the thesis report.
