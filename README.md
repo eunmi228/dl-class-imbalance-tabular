@@ -18,7 +18,7 @@ This repository contains the code, datasets, and documentation for the thesis ti
   5. **xgb_train_eval.py**:
    This script focuses on training and evaluating XGBoost models. It performs hyperparameter tuning using Bayesian optimization to find the best settings, which are then used by `xgb_train_eval_cv.py` for cross-validation.
 
-- `docs/`: Contains the thesis report.
+- `doc/`: Contains the thesis report.
 
 ## Thesis Summary
 
