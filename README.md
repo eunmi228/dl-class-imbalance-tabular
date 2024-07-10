@@ -5,7 +5,46 @@ This repository contains the code, datasets, and documentation for the thesis ti
 ## Contents
 
 - `src/`: Contains the source code for the experiments.
-- `docs/`: Contains the thesis report.
+  
+   ### Files and Descriptions
+  1. **dl_eval.py**:
+      This script is used for evaluating deep learning models on various datasets with different class imbalance handling methods. It includes the implementation of model evaluation metrics and procedures.
+  2. **dl_train.py**:
+      This script is responsible for training deep learning models such as ResNet and FT-Transformer on tabular datasets. It handles the setup of data loaders, model preparation, and training loop, including early stopping and logging.
+  3. **util.py**:
+      This utility script contains helper functions for data loading and preprocessing, which are used across the training and evaluation scripts. It includes functions for loading datasets, transforming features, and splitting data into training and test sets.
+  4. **xgb_train_eval_cv.py**:
+      This script is designed for training and evaluating XGBoost models using cross-validation. It fetches the best hyperparameter settings achieved from `xgb_train_eval.py` and evaluates the model's performance under various class imbalance scenarios using these hyperparameters.
+  5. **xgb_train_eval.py**:
+   This script focuses on training and evaluating XGBoost models. It performs hyperparameter tuning using Bayesian optimization to find the best settings, which are then used by `xgb_train_eval_cv.py` for cross-validation.
+
+- `doc/`: Contains the thesis report.
+
+## Thesis Summary
+
+The thesis investigates the impact of various class imbalance handling methods on the performance of deep learning models when applied to imbalanced tabular data. The research involves a comparative analysis between XGBoost for traditional machine learning approaches, and ResNet and FT-Transformer for deep learning approaches under different class imbalance scenarios.
+
+### Key Points:
+- **Data Collection and Preprocessing**: Sourcing datasets from finance and cybersecurity domains, handling missing values, and transforming features.
+- **Experimental Setup**: Implementing and evaluating different class imbalance handling methods like SMOTE, ADASYN, and class weighting.
+- **Comparative Analysis**: Comparing the performance of traditional ML models (XGBoost) with DL models (ResNet, FT-Transformer) on imbalanced datasets.
+- **Results**: Determining the effectiveness of each method in improving the performance of DL models on imbalanced data and identifying scenarios where DL models can outperform traditional ML models.
+
+## How to Run
+
+1. **Training Deep Learning Models**:
+   ```bash
+   python dl_train.py --architecture resnet --datatype control --device 0
+
+2. **Evaluating Deep Learning Models**:
+   ```bash
+   python dl_eval.py --architecture resnet --datatype control --device 0
+3. **Training XGBoost Models**:
+   ```bash
+   python xgb_train_eval.py --datatype control --device 0
+4. **Training XGBoost Models with Cross-Validation**:
+   ```bash
+   python xgb_train_eval_cv.py --datatype control --device 0
 
 ## Class Imbalance Handling Methods
 
